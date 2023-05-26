@@ -21,6 +21,8 @@ const float cn = 261.6256;
 const float csn = 277.1826;
 const float dn = 293.6648;
 const float dsn = 311.1270;
+const float en = 329.6276;
+const float fn = 329.6276;
 
 void setup()
 {
@@ -38,6 +40,9 @@ void setup()
   pinMode(a_sharp, INPUT_PULLUP);
   pinMode(b, INPUT_PULLUP);
   pinMode(piezo, OUTPUT);
+  pinMode(song, INPUT_PULLUP);
+  pinMode(song2, INPUT_PULLUP);
+  pinMode(song3, INPUT_PULLUP);
 }
 
 void loop()
@@ -53,13 +58,13 @@ void loop()
     tone(piezo, dn);
   }
   else if (digitalRead(d_sharp) == 0){
-    tone(piezo, 311.1270);  // You can replace this fixed frequency with dsn
+    tone(piezo, dsn);
   }
   else if (digitalRead(e) == 0){
-    tone(piezo, 329.6276);
+    tone(piezo, en);
   }
   else if (digitalRead(f) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, fn);
   }
   else if (digitalRead(f_sharp) == 0){
     tone(piezo, 311.1270);
@@ -78,6 +83,13 @@ void loop()
   }
   else if (digitalRead(b) == 0){
     tone(piezo, 311.1270);
+  }
+  else if (digitalRead(song) == 0){
+    tone(piezo, 2000);
+  }
+  else if (digitalRead(song2) == 0){
+  }
+  else if (digitalRead(song3) == 0){
   }
   else {
     noTone(piezo);  // If no button is pressed, stop playing the tone
