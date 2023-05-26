@@ -22,7 +22,13 @@ const float csn = 277.1826;
 const float dn = 293.6648;
 const float dsn = 311.1270;
 const float en = 329.6276;
-const float fn = 329.6276;
+const float fn = 349.2282;
+const float fsn = 369.9944;
+const float gn = 391.9954;
+const float gsn = 415.3047;
+const float an = 440.0000;
+const float asn = 466.1638;
+const float bn = 493.8833;
 
 void setup()
 {
@@ -67,22 +73,22 @@ void loop()
     tone(piezo, fn);
   }
   else if (digitalRead(f_sharp) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, fsn);
   }
   else if (digitalRead(g) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, gn);
   }
   else if (digitalRead(g_sharp) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, gsn);
   }
   else if (digitalRead(a) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, an);
   }
   else if (digitalRead(a_sharp) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, asn);
   }
   else if (digitalRead(b) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, bn);
   }
   else if (digitalRead(song) == 0){
     tone(piezo, 2000);
