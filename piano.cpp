@@ -17,12 +17,22 @@ const int song = 14;
 const int song2 = 15;
 const int song3 = 16;
 
+const int led = 17;
+const int led2 = 18;
+const int led3 = 19;
+
 const float cn = 261.6256; 
 const float csn = 277.1826;
 const float dn = 293.6648;
 const float dsn = 311.1270;
 const float en = 329.6276;
-const float fn = 329.6276;
+const float fn = 349.2282;
+const float fsn = 369.9944;
+const float gn = 391.9954;
+const float gsn = 415.3047;
+const float an = 440.0000;
+const float asn = 466.1638;
+const float bn = 493.8833;
 
 void setup()
 {
@@ -43,6 +53,9 @@ void setup()
   pinMode(song, INPUT_PULLUP);
   pinMode(song2, INPUT_PULLUP);
   pinMode(song3, INPUT_PULLUP);
+  pinMode(led, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
 }
 
 void loop()
@@ -50,6 +63,7 @@ void loop()
   // Check the status of each button and play the corresponding tone
   if (digitalRead(c) == 0){
     tone(piezo, cn);
+    
   }
   else if (digitalRead(c_sharp) == 0){
     tone(piezo, csn);
@@ -67,29 +81,37 @@ void loop()
     tone(piezo, fn);
   }
   else if (digitalRead(f_sharp) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, fsn);
   }
   else if (digitalRead(g) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, gn);
   }
   else if (digitalRead(g_sharp) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, gsn);
   }
   else if (digitalRead(a) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, an);
   }
   else if (digitalRead(a_sharp) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, asn);
   }
   else if (digitalRead(b) == 0){
-    tone(piezo, 311.1270);
+    tone(piezo, bn);
   }
   else if (digitalRead(song) == 0){
-    tone(piezo, 2000);
+    digitalWrite(led, HIGH);
+    //song here
+    digitalWrite(led, LOW);
   }
   else if (digitalRead(song2) == 0){
+    digitalWrite(led2, HIGH);
+    //song here
+    digitalWrite(led2, LOW);
   }
   else if (digitalRead(song3) == 0){
+    digitalWrite(led3, HIGH);
+    //song here
+    digitalWRite(led3, LOW);
   }
   else {
     noTone(piezo);  // If no button is pressed, stop playing the tone
