@@ -111,7 +111,7 @@ void loop()
   else if (digitalRead(song3) == 0){
     digitalWrite(led3, HIGH);
     //song here
-    digitalWRite(led3, LOW);
+    digitalWrite(led3, LOW);
   }
   else {
     noTone(piezo);  // If no button is pressed, stop playing the tone
