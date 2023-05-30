@@ -12,6 +12,7 @@ const int a = 4;
 const int a_sharp = 3;
 const int b = 2;
 const int piezo = 1;
+const int p = 1;
 
 const int song = 14;
 const int song2 = 15;
@@ -21,6 +22,7 @@ const int led = 17;
 const int led2 = 18;
 const int led3 = 19;
 
+//Note frequencies
 const float cn = 261.6256; 
 const float csn = 277.1826;
 const float dn = 293.6648;
@@ -60,6 +62,11 @@ void setup()
 
 void loop()
 {
+  piano();
+  musicplayer();
+}
+
+void piano() {
   // Check the status of each button and play the corresponding tone
   if (digitalRead(c) == 0){
     tone(piezo, cn);
@@ -98,22 +105,2437 @@ void loop()
   else if (digitalRead(b) == 0){
     tone(piezo, bn);
   }
-  else if (digitalRead(song) == 0){
+  else {
+    noTone(piezo);  // If no button is pressed, stop playing the tone
+  }
+}
+
+void musicplayer(){
+  if (digitalRead(song) == 0){
     digitalWrite(led, HIGH);
-    //song here
+    songfn();
     digitalWrite(led, LOW);
   }
   else if (digitalRead(song2) == 0){
     digitalWrite(led2, HIGH);
-    //song here
+    //song here function?
     digitalWrite(led2, LOW);
   }
   else if (digitalRead(song3) == 0){
     digitalWrite(led3, HIGH);
-    //song here
+    //song here function?
     digitalWrite(led3, LOW);
   }
-  else {
-    noTone(piezo);  // If no button is pressed, stop playing the tone
-  }
+}
+
+void songfn() { // Creates a function that plays the first song
+  tone(p, fn); //F4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  //M2 
+  tone(p, gn); //G4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, 523.2511); //C5
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, asn); //Bb4 
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, an); //A4 
+  delay(263); //eighth 
+  noTone(p);
+  
+  //M3 
+  tone(p, fn); //F4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526+526+263); //quarter+dotted quarter (tied) 
+  noTone(p);
+  
+  //M4 (E1)
+  delay(526); //two eighth (quarter) rest
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  //M1'
+  tone(p, fn); //F4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  //M2'
+  tone(p, gn); //G4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, 523.2511); //C5
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, asn); //Bb4 
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, an); //A4 
+  delay(263); //eighth 
+  noTone(p);
+  
+  //M3'
+  tone(p, fn); //F4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(526+263); //dotted quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  //M5 (E2)
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p);
+  
+  delay(526); //quarter rest
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M6
+  delay(526); //quarter rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth + sixteenth
+  noTone(p);
+  
+  //M7
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263+526+526); //eighth + half
+  noTone(p);
+  
+  delay(526); 
+  
+  //M8
+  delay(263); //eighth rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth 
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M9 (E1)
+  tone(p, 523.2511); //C5
+  delay(263); //eighth 
+  noTone(p);
+  
+  delay(263); //eighth rest
+  
+  tone(p, 523.2511); //C5
+  delay(263); //eighth 
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(526+526); //half
+  noTone(p);
+  
+  delay(263); //eighth
+  
+  
+  //M11 
+  delay(263); //eighth
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M12
+  delay(263); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263+526); //eighth+quarter
+  noTone(p); 
+  
+  delay(526);
+  
+  //M13 
+  delay(263); 
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M14
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  delay(526); //quarter
+  
+  //M15
+  tone(p, fn); //F4
+  delay(526+526+263); //half+eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M16
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M17
+  delay(526+526); //half rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M18
+  delay(263); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth+quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M19 
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M20 
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth tie
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M21
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M22
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M23
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M24
+  tone(p, 523.2511); //C5
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth 
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M25
+  
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M26 (E1)
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p); 
+  
+  delay(526); //quarter rest
+  
+  //M6'
+  delay(526); //quarter rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth + sixteenth
+  noTone(p);
+  
+  //M7'
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263+526+526); //eighth + half
+  noTone(p);
+  
+  delay(526); 
+  
+  //M8'
+  delay(263); //eighth rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth 
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M10 (E2)
+  
+  tone(p, 523.2511); //C5
+  delay(263); //eighth
+  noTone(p);
+  
+  delay(263); //eighth
+  
+  tone(p, 523.2511); //C5
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+263); //eighth ties
+  noTone(p); 
+  
+  tone(p, an); //A4
+  delay(263);
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M11' 
+  delay(263); //eighth
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M12'
+  delay(263); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263+526); //eighth+quarter
+  noTone(p); 
+  
+  delay(526);
+  
+  //M13'
+  delay(263); 
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M14'
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  delay(526); //quarter
+  
+  //M15'
+  tone(p, fn); //F4
+  delay(526+526+263); //half+eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M16'
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M17'
+  delay(526+526); //half rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M18'
+  delay(263); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth+quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M19' 
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M20'
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth tie
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M21'
+  tone(p, fn); //F4 +
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, gn); //G4 +
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4 + 
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4 + 
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4 +
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p); 
+  
+  //M22'
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M23'
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M24'
+  tone(p, 523.2511); //C5
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth 
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M25'
+  
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M27 (E2)
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M28
+  
+  tone(p, an); //A4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth+quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M29
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth tie
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M30
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M31
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M32
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M33
+  tone(p, 523.2511); //C5
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth 
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M34
+  
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M35
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p); 
+  
+  delay(526);
+  
+  //M36 (BRIDGE)
+  
+  tone(p, cn); //C4
+  delay(526+526+526+526); //whole 
+  noTone(p);
+  
+  //M37 (E1)
+  
+  tone(p, fn); //F4
+  delay(263+132); //dotted eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  delay(263); //eighth
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  delay(526+526); //half
+  
+  //M36' (BRIDGE')
+  
+  tone(p, cn); //C4
+  delay(526+526+526+526); //whole 
+  noTone(p);
+  
+  //M38 (E2)
+  
+  tone(p, fn); //F4
+  delay(263+132); //dotted eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  delay(263); //eighth
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  delay(526+526);
+  
+  //M6''
+  delay(526); //quarter rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth + sixteenth
+  noTone(p);
+  
+  //M7''
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263+526+526); //eighth + half
+  noTone(p);
+  
+  delay(526); 
+  
+  //M8''
+  delay(263); //eighth rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth 
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M10 (E3)
+  
+  tone(p, 523.2511); //C5
+  delay(263); //eighth
+  noTone(p);
+  
+  delay(263); //eighth
+  
+  tone(p, 523.2511); //C5
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+263); //eighth ties
+  noTone(p); 
+  
+  tone(p, an); //A4
+  delay(263);
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M11''
+  delay(263); //eighth
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M12''
+  delay(263); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263+526); //eighth+quarter
+  noTone(p); 
+  
+  delay(526);
+  
+  //M13''
+  delay(263); 
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M14''
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  delay(526); //quarter
+  
+  //M15''
+  tone(p, fn); //F4
+  delay(526+526+263); //half+eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M16''
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M17''
+  delay(526+526); //half rest
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M18''
+  delay(263); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth+quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M19''
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M20''
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth tie
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M21''
+  tone(p, fn); //F4
+  delay(526); //quarter 
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+ 
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4 
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p); 
+  
+  //M22''
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M23''
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M24''
+  tone(p, 523.2511); //C5
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth 
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M25''
+  
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M27 (E3)
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M39
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M40
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth tie
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M41
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p); 
+  
+  //M42
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M43
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M44
+  tone(p, 523.2511); //C5
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth 
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M45
+  
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M46
+  
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M47
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M48
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth tie
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M49
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p); 
+  
+  //M50
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M51
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, an); //A4
+  delay(263+132); //dotted eighth
+  noTone(p);
+  
+  tone(p, gn); //G4
+  delay(263+526); //eighth + quarter
+  noTone(p); 
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M52
+  
+  tone(p, 523.2511); //C5
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(263+132); //eighth+sixteenth 
+  noTone(p);
+  
+  tone(p, en); //E4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(263); //eighth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(132); //sixteenth
+  noTone(p); 
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(132); //sixteenth 
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  //M53
+  tone(p, fn); //F4
+  delay(526); //quarter
+  noTone(p); 
+  
+  tone(p, gn); //G4
+  delay(263); //eighth
+  noTone(p); 
+  
+  tone(p, en); //E4
+  delay(263+132); //eighth+sixteenth
+  noTone(p);
+  
+  tone(p, dn); //D4
+  delay(132); //sixteenth
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, cn); //C4
+  delay(263); //eighth
+  noTone(p);
+  
+  //M54
+  tone(p, gn); //G4
+  delay(526); //quarter
+  noTone(p);
+  
+  tone(p, fn); //F4
+  delay(526+526); //half
+  noTone(p);
+  
+  delay(526);  
 }
