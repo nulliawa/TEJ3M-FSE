@@ -70,7 +70,6 @@ void piano() {
   // Check the status of each button and play the corresponding tone
   if (digitalRead(c) == 0){
     tone(piezo, cn);
-    
   }
   else if (digitalRead(c_sharp) == 0){
     tone(piezo, csn);
@@ -118,12 +117,12 @@ void musicplayer(){
   }
   else if (digitalRead(song2) == 0){
     digitalWrite(led2, HIGH);
-    //song here function?
+    songfn2();
     digitalWrite(led2, LOW);
   }
   else if (digitalRead(song3) == 0){
     digitalWrite(led3, HIGH);
-    //song here function?
+    songfn3();
     digitalWrite(led3, LOW);
   }
 }
@@ -2538,4 +2537,204 @@ void songfn() { // Creates a function that plays the first song
   noTone(p);
   
   delay(526);  
+}
+
+void songfn2() {
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, an);  // Play A minor
+  delay(500);
+  tone(piezo, fn);  // Play F
+  delay(1000);
+
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, an);  // Play A minor
+  delay(500);
+  tone(piezo, fn);  // Play F
+  delay(1000);
+
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, an);  // Play A minor
+  delay(500);
+  tone(piezo, fn);  // Play F
+  delay(1000);
+
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, an);  // Play A minor
+  delay(500);
+  tone(piezo, fn);  // Play F
+  delay(1000);
+
+  // Chorus
+  tone(piezo, fn);  // Play F
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, an);  // Play A minor
+  delay(500);
+
+  tone(piezo, fn);  // Play F
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+
+  tone(piezo, fn);  // Play F
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, an);  // Play A minor
+  delay(500);
+
+  tone(piezo, fn);  // Play F
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, cn);  // Play C
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+
+    // Bridge
+  tone(piezo, an);  // Play A minor
+  delay(500);
+  tone(piezo, gn);  // Play G
+  delay(500);
+  tone(piezo, fn);  // Play F
+  delay(500);
+  tone(piezo, cn);  // Play C
+  delay(1000);
+
+  tone(piezo, an);  // Play A minor
+  delay(500);
+  tone(piezo, gn);  // Play G 
+}
+
+void songfn3(){
+  tone(p, cn);
+  delay(400);
+  noTone(p);
+  tone(p, cn);
+  delay(400);
+  noTone(p);
+  tone(p, gn);
+  delay(400);
+  noTone(p);
+  tone(p, gn);
+  delay(400);
+  noTone(p);
+  tone(p, an);
+  delay(400);
+  noTone(p);
+  tone(p, an);
+  delay(400);
+  noTone(p);
+  tone(p, gn);
+  delay(400*2);
+  noTone(p);
+  tone(p, fn);
+  delay(400);
+  noTone(p);
+  tone(p, fn);
+  delay(400);
+  noTone(p);
+  tone(p, en);
+  delay(400);
+  noTone(p);
+  tone(p, en);
+  delay(400);
+  noTone(p);
+  tone(p, dn);
+  delay(400);
+  noTone(p);
+  tone(p, dn);
+  delay(400);
+  noTone(p);
+  tone(p, cn);
+  delay(400*2);
+  noTone(p);
+  
+  for (int i=0; i<2; i++) {
+    tone(p, gn);
+  	delay(400);
+  	noTone(p);
+    tone(p, gn);
+  	delay(400);
+  	noTone(p);
+    tone(p, fn);
+  	delay(400);
+  	noTone(p);
+    tone(p, fn);
+  	delay(400);
+  	noTone(p);
+    tone(p, en);
+  	delay(400);
+  	noTone(p);
+    tone(p, en);
+  	delay(400);
+  	noTone(p);
+    tone(p, dn);
+    delay(400*2);
+  }
+  
+  tone(p, cn);
+  delay(400);
+  noTone(p);
+  tone(p, cn);
+  delay(400);
+  noTone(p);
+  tone(p, gn);
+  delay(400);
+  noTone(p);
+  tone(p, gn);
+  delay(400);
+  noTone(p);
+  tone(p, an);
+  delay(400);
+  noTone(p);
+  tone(p, an);
+  delay(400);
+  noTone(p);
+  tone(p, gn);
+  delay(400*2);
+  noTone(p);
+  tone(p, fn);
+  delay(400);
+  noTone(p);
+  tone(p, fn);
+  delay(400);
+  noTone(p);
+  tone(p, en);
+  delay(400);
+  noTone(p);
+  tone(p, en);
+  delay(400);
+  noTone(p);
+  tone(p, dn);
+  delay(400);
+  noTone(p);
+  tone(p, dn);
+  delay(400);
+  noTone(p);
+  tone(p, cn);
+  delay(400*2);
+  noTone(p);
 }
